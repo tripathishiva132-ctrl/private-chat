@@ -3,44 +3,87 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Private Chat</title>
+  <title>TwoSpace</title>
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-  <div id="loginScreen" class="login-screen">
-    <div class="login-box">
-      <div class="lock">🔐</div>
-      <h1>Private Chat</h1>
-      <p>Enter password to continue</p>
+  <div class="background">
+    <div class="glow glow1"></div>
+    <div class="glow glow2"></div>
 
-      <input type="password" id="password" placeholder="Enter password">
+    <div id="loginScreen" class="login-card">
 
-      <button onclick="checkPassword()">Open Chat</button>
+      <div class="logo">
+        <span>T</span><span>S</span>
+      </div>
+
+      <h1>TwoSpace</h1>
+      <p class="subtitle">A private space for two.</p>
+
+      <div class="password-box">
+        <input
+          type="password"
+          id="password"
+          placeholder="Enter secret password"
+        >
+        <button onclick="checkPassword()">Enter</button>
+      </div>
 
       <p id="error" class="error"></p>
-    </div>
-  </div>
 
-  <div id="chatScreen" class="chat-screen">
-
-    <header class="chat-header">
-      <div class="profile">
-        <div class="avatar">👤</div>
-        <div>
-          <h2>My Friend</h2>
-          <span>Online</span>
-        </div>
+      <div class="secure">
+        PRIVATE • TWO PEOPLE • ONE SPACE
       </div>
-    </header>
 
-    <main class="messages" id="messages"></main>
+    </div>
 
-    <footer class="chat-input">
-      <input type="text" id="messageInput" placeholder="Type a message...">
-      <button onclick="sendMessage()">➤</button>
-    </footer>
+
+    <div id="chatScreen" class="chat-screen">
+
+      <header class="chat-header">
+
+        <div class="friend">
+          <div class="friend-avatar">TS</div>
+
+          <div>
+            <h2>Our Space</h2>
+            <span>● Online</span>
+          </div>
+        </div>
+
+        <button class="menu">⋮</button>
+
+      </header>
+
+
+      <main class="messages" id="messages">
+
+        <div class="welcome">
+          <div class="welcome-logo">TS</div>
+          <h2>Welcome to TwoSpace</h2>
+          <p>This space belongs to just two people.</p>
+        </div>
+
+      </main>
+
+
+      <footer class="chat-input">
+
+        <button class="plus">＋</button>
+
+        <input
+          type="text"
+          id="messageInput"
+          placeholder="Write something..."
+        >
+
+        <button class="send" onclick="sendMessage()">➤</button>
+
+      </footer>
+
+    </div>
 
   </div>
 

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Private Chat</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div id="loginScreen" class="login-screen">
+    <div class="login-box">
+      <div class="lock">🔐</div>
+      <h1>Private Chat</h1>
+      <p>Enter password to continue</p>
+
+      <input type="password" id="password" placeholder="Enter password">
+
+      <button onclick="checkPassword()">Open Chat</button>
+
+      <p id="error" class="error"></p>
+    </div>
+  </div>
+
+  <div id="chatScreen" class="chat-screen">
+
+    <header class="chat-header">
+      <div class="profile">
+        <div class="avatar">👤</div>
+        <div>
+          <h2>My Friend</h2>
+          <span>Online</span>
+        </div>
+      </div>
+    </header>
+
+    <main class="messages" id="messages"></main>
+
+    <footer class="chat-input">
+      <input type="text" id="messageInput" placeholder="Type a message...">
+      <button onclick="sendMessage()">➤</button>
+    </footer>
+
+  </div>
+
+  <script src="script.js"></script>
+
+</body>
+</html>

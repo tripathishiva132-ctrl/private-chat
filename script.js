@@ -44,6 +44,7 @@ async function sendMessage() {
 
 // Receive messages
 function startChat() {
+  auth.signInAnonymously();
   db.collection("messages")
     .orderBy("createdAt")
     .onSnapshot((snapshot) => {

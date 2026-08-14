@@ -7,8 +7,10 @@ function checkPassword() {
   if (enteredPassword === PASSWORD) {
     document.getElementById("loginScreen").style.display = "none";
     document.getElementById("chatScreen").style.display = "block";
+
+    document.getElementById("messageInput").focus();
   } else {
-    error.textContent = "Wrong password ❌";
+    error.textContent = "Incorrect password";
   }
 }
 
@@ -16,7 +18,7 @@ function sendMessage() {
   const input = document.getElementById("messageInput");
   const text = input.value.trim();
 
-  if (text === "") return;
+  if (!text) return;
 
   const message = document.createElement("div");
   message.className = "message sent";
@@ -30,8 +32,18 @@ function sendMessage() {
   messages.scrollTop = messages.scrollHeight;
 }
 
-document.getElementById("messageInput").addEventListener("keydown", function(event) {
-  if (event.key === "Enter") {
-    sendMessage();
-  }
-});
+document
+  .getElementById("messageInput")
+  .addEventListener("keydown", function (event) {
+    if (event.key === "Enter") {
+      sendMessage();
+    }
+  });
+
+document
+  .getElementById("password")
+  .addEventListener("keydown", function (event) {
+    if (event.key === "Enter") {
+      checkPassword();
+    }
+  });
